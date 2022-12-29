@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>圣杯布局</title>
+    <style>
+      :root {
+        --left-width: 300px;
+        --right-width: 200px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        width: 100%;
+        background: green;
+        height: 200px;
+      }
+      .left {
+        height: 200px;
+        width: var(--left-width);
+        background: pink;
+      }
+      .right {
+        height: 200px;
+        width: var(--right-width);
+        background: pink;
+      }
+      .wrap div {
+        float: left;
+      }
+      .wrap {
+        padding: 0 var(--right-width) 0 var(--left-width);
+        height: 2000px;
+      }
+      .left {
+        margin-left: -100%;
+        position: relative;
+        left: calc(-1 * var(--left-width));
+      }
+      .right {
+        margin-left: calc(-1 * var(--right-width));
+        position: relative;
+        left: var(--right-width);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="content">content</div>
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+
+    <script type="text/javascript"></script>
+  </body>
+</html>
