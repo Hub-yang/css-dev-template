@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox实现圣杯布局效果</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .header,
+      .footer {
+        height: 30px;
+        background-color: #666;
+      }
+
+      .container {
+        height: calc(100% - 60px);
+        display: flex;
+        flex-flow: row nowrap;
+        /* min-width: 500px; */
+      }
+      .container .column {
+        height: 200px;
+      }
+      .left {
+        order: 0;
+        width: 300px;
+        background-color: pink;
+      }
+      .center {
+        order: 1;
+        flex-grow: 1;
+        background-color: green;
+      }
+      .right {
+        order: 2;
+        width: 200px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Header</div>
+    <div class="container">
+      <div class="center column">Container</div>
+      <div class="left column">Left</div>
+      <div class="right column">Right</div>
+    </div>
+    <div class="footer">Footer</div>
+  </body>
+</html>
