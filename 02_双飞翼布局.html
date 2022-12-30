@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>双飞翼布局</title>
+    <style>
+      :root {
+        --left-width: 300px;
+        --right-width: 200px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrap div {
+        float: left;
+      }
+      .content {
+        width: 100%;
+        background: green;
+        height: 200px;
+      }
+      .content .inner {
+        margin: 0 var(--right-width) 0 var(--left-width);
+      }
+      .left {
+        height: 200px;
+        width: var(--left-width);
+        background: pink;
+        /* 移动至标准件位置 */
+        margin-left: -100%;
+      }
+      .right {
+        height: 200px;
+        width: var(--right-width);
+        background: pink;
+        /* 移动至标准件位置 */
+        margin-left: calc(-1 * var(--right-width));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="content">
+        <div class="inner">content</div>
+      </div>
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+  </body>
+</html>
