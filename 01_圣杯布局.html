@@ -12,6 +12,13 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+      .wrap div {
+        float: left;
+      }
+      .wrap {
+        padding: 0 var(--right-width) 0 var(--left-width);
       }
       .content {
         width: 100%;
@@ -22,25 +29,16 @@
         height: 200px;
         width: var(--left-width);
         background: pink;
-      }
-      .right {
-        height: 200px;
-        width: var(--right-width);
-        background: pink;
-      }
-      .wrap div {
-        float: left;
-      }
-      .wrap {
-        padding: 0 var(--right-width) 0 var(--left-width);
-        height: 2000px;
-      }
-      .left {
+        /* 移动至标准件位置 */
         margin-left: -100%;
         position: relative;
         left: calc(-1 * var(--left-width));
       }
       .right {
+        height: 200px;
+        width: var(--right-width);
+        background: pink;
+        /* 移动至标准件位置 */
         margin-left: calc(-1 * var(--right-width));
         position: relative;
         left: var(--right-width);
@@ -53,7 +51,5 @@
       <div class="left">left</div>
       <div class="right">right</div>
     </div>
-
-    <script type="text/javascript"></script>
   </body>
 </html>
